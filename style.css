@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 
 body {
     font-family: 'Roboto';
@@ -101,6 +101,12 @@ body {
     float: right;
 }
 
+.sub-item li.grade::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 .sub-item li.grade .sub-tit {
     margin-right: 22px;
     position: relative;
@@ -134,27 +140,32 @@ body {
 
 .preview_btn {
     right: 0;
+    text-indent: 10px;
 }
 
-.preview_btn img {
+.preview_btn::before {
+    content: '';
     width: 14px;
-    vertical-align: top;
-    margin-right: 2px;
+    height: 14px;
+    position: absolute;
+    left: 22%;
+    top: 50%;
+    transform: translateY(-7px);
+    background: url(image/play.png);
+    background-size: 14px 14px;
 }
 
 /* footer */
 .footer {
-    width: auto;
-    height: 230px;
-    background: #F2F2F2;
     padding: 50px 0;
-    box-sizing: border-box;
     position: relative;
+    background: #F2F2F2;
 }
 
 .container {
     width: 1060px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .text_JungleCinema {
@@ -178,24 +189,24 @@ body {
     float: right;
 }
 
-.sns .sns_btn {
+.sns li {
+    float: left;
     margin-left: 25px
 }
 
-.sns img {
+.sns_img {
     width: 24px;
 }
 
 .site-info {
-    margin-top: 80px;
-    float: left;
-    clear: both;
+    margin-top: 100px;
 }
 
-.site-info dd {
-    display: inline-block;
+.site-info dt, .site-info dd {
+    display: inline;
     font-size: 14px;
     color: #4F4F4F;
+    float: left;
 }
 
 .site-info dd::after {
@@ -207,11 +218,11 @@ body {
     content: '';
 }
 
-.site-info strong {
+.site-info dt {
     font-weight: 700;
+    margin-right: 5px;
 }
 
 .copyright {
-    margin-top: 80px;
     float: right;
 }
